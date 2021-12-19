@@ -34,6 +34,8 @@ The source of the data set is Kaggle https://www.kaggle.com/aungpyaeap/supermark
  ![image](https://user-images.githubusercontent.com/73906550/146686626-1cff967f-04e5-45c6-9407-475a9f1e4add.png)
  
  ** Supermarket monthly sales how it looks like**
+ 
+ 
  ![image](https://user-images.githubusercontent.com/73906550/146686680-c5c5ebe2-e5c5-42d8-b068-0776212b37fc.png)
 
 
