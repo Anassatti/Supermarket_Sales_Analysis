@@ -1,0 +1,112 @@
+
+1. Project Planning
+- Produce meaningful report for the supermarket data
+------------------------------------------
+2. Data Collection
+------------------------
+We have CSV data set
+
+3.Data Cleaning
+-----------------
+Add new column called sales, which quanity* unit price for each month
+---------------------------------------------------------
+df['Sales']= df['Quantity'] *df['Unit price']
+df.head()
+----------------------------------------------------------
+
+pd.to_datetime('date').dt.to_period('m')
+4.EDA-Exploratory Data Analysis
+
+#####What was the best month for sales?How much was earned that month
+-------------------------------------------------------------------
+
+1. First, we add a month column that extracted from date column, which contain a full date(12/1/2019)
+----------------------------------------------
+
+df['Month'] = pd.DatetimeIndex(df['Date']).month
+df.head()
+-----------------------------------------------------
+2. Sum sales based on month, which will help to answer the question
+-------------------------------------------
+import matplotlib.pyplot as plt
+df.groupby('Month').sum()['Sales'].plot.bar()
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+-------------------
+
+We will answer below questions
+---------------------------------
+1.Compare the products based on their sales?Show in graph 
+-----------------------------------------------------------------
+
+df1.drop(['Customer type','Gender','Unit price','Quantity','Tax 5%','Total','Date','Time','Payment','cogs','gross margin percentage','gross income','Rating','Month'],axis=1,inplace=True)
+df1.head()
+
+Group by sales
+---------------
+df1.groupby('Product line').sum()['Sales']
+
+Show the result in Graph
+-------------------------
+df1.groupby('Product line').sum()['Sales'].plot.pie()
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+------------------------
+import matplotlib.pyplot as plt
+df.groupby('Product line').sum()['Sales'].plot.bar(color=['black', 'red', 'green', 'blue', 'cyan'])
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+
+ Show in Pi& ar chat
+------------------------
+2. Which city has the highest sale?
+3. What the highest branch has sale?
+4.What the most used payment method?
+5. What the highest product rating?
+-------------------------------------------------------
+6. Who is buy product more?Femal or Male?And Which product?
+----------------------------------------------------
+## Who is buy product more?Femal or Male?
+df.groupby(['Gender']).sum()['Sales'].plot.bar(color=['black', 'red',])
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+
+
+------------------------------------------
+9. Compare customer type?
+10. When the products sale most? Compare the date? Trends graph
+------------------------------------------------------------------------
+
+11. What time should adertisements to maximize likelihood of customer buying products
+Hours=[hour for hour, df in df.groupby('Time')]
+plt.plot(hours, df.groupby(['Time']).count())
+plt.xticks(Hours)
+plt.grid()
+plt.show()
+
+
+12. The distribution of sales in the cities
+------------------------------------------------
+
+df.groupby('City').sum()['Sales'].plot.bar(color=['purple', 'gray', 'green'])
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+------------------------------------------------
+What the products sale the most
+--------------------------------
+
+Product_group= df.groupby('Product line)
+Order= Product_group.sum()['Quantity']
+products=[product for product, df in Product_group]
+plt.bar(products, order)
+------------------------
+
+
+-------------------
+.Model Building
+6.Production
