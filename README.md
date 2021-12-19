@@ -6,7 +6,7 @@ This repo for supermarket sales data anaylsis, and building a model showing the 
 3. Pandas
 4. Numpy
 5. Matplotlib
-6. sklearn.linear_model
+6. Sklearn.linear_model
 7. LinearRegression, Lasso
 
 **Data Set**
