@@ -1,5 +1,6 @@
 # Supermarket_Sales_Analysis
-This repo for supermarket sales data anaylsis, and building a model showing the prediction of future sales.
+This repo is for supermarket sales data analysis and building a model showing the prediction of future sales.
+
 **Technologies**
 1. Python
 2. Jupyter notebook
